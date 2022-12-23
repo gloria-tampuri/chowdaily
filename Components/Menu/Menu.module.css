@@ -1,0 +1,94 @@
+.header {
+    height: 235px;
+    color: white;
+    background-image: linear-gradient(166.32deg, #FD841F 13.09%, rgba(253, 133, 40, 0.966248) 26.35%, rgba(255, 136, 75, 0.83) 79.88%);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding: 2rem;
+}
+.header h1 {
+    text-align: center;
+    color: rgb(29, 29, 29);
+    width: 12ch;
+    margin: 60px auto 0 auto;
+}
+
+.header h1 span {
+    text-decoration: underline;
+    color: white;
+}
+.add{
+    width: 100%;        
+    display: flex;
+  justify-content: right;
+}
+.addmeal{
+    display: flex;
+    /* flex-direction: column; */
+    align-items:flex-end;
+
+}
+.add div p{
+    color: #D94B03;
+
+}
+
+.addbtn{
+    display: block;
+    background-color: #D94B03;
+    padding: 1rem;
+    border-radius: 50%;
+  
+}
+.opt {
+    color: #FD841F;
+    width:fit-content;
+    margin: 4rem auto 0 auto;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.meal {
+    display: flex;
+    margin: 3rem 1rem;
+    background: linear-gradient(128.51deg, rgba(253, 132, 31, 0.6) 5.34%, rgba(255, 136, 75, 0.5) 101.5%);
+    border: 3px solid #D94B03;
+    box-shadow: 0px 8px 15px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    place-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.edit{
+    position: absolute;
+    top: -15px;
+    right: 20%;
+    background-color: #D94B03;
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+
+.delete{
+    font-size: 2.4rem;
+    color: white;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    background-color: #FF0000;
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+
+
+
+.meal p {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    font-weight: 600;
+    line-height:2rem;
+    color: #D94B03;
+
+}
+

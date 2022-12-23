@@ -1,0 +1,17 @@
+.Footer{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(106.64deg, #D94B03 -6.59%, rgba(255, 136, 75, 0.83) 95.39%);
+    padding: 0.5rem 1rem ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opt{
+    display: flex;
+    flex-direction: column;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
