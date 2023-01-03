@@ -1,23 +1,56 @@
 import React from 'react'
 import classes from './SignIn.module.css'
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Image from 'next/image'
 import Link from 'next/link'
+import app from '../../library/firebase';
+import { useRouter } from 'next/router';
 
 const SignIn = () => {
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    const router = useRouter()
+
+    //Google signup
+  const googleSignInHandler=()=>{
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+     if(user){
+      console.log(user);
+      router.push('/dashboard')
+     }
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+  }
+
+
   return (
     <div className={classes.signin}>
         <div className={classes.header}>
            <div className={classes.words}>
-           <h1>Welcome back!</h1>
+           <h1>Welcome back!</h1> 
             <h1>Login</h1>
            </div>
         </div>
 
         <div className={classes.mediums}>
-            <Link href='' className={classes.medium}>
+            <div onClick={googleSignInHandler} className={classes.medium}>
                 <p> Sign in with</p>
                 <Image src='/assets/google.png' alt='google sign' width={30} height={30}/>
-            </Link>
+            </div>
 
             <Link href='' className={classes.medium}>
                 <p> Sign in with</p>

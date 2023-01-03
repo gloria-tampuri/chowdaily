@@ -92,3 +92,8 @@
 
 }
 
+@media (max-height:670px){
+    .header{
+    height: 200px;
+    }
+}

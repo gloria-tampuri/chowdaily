@@ -1,13 +1,36 @@
-import React from 'react'
+import {useState,useEffect} from 'react'
 import classes from './Dashboard.module.css'
 import Image from 'next/image'
 import Footer from '../Footer/Footer'
+import app from '../../library/firebase'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { useRouter } from 'next/router'
+
 const Dashboard = () => {
+const [displayName, setDisplayName] = useState('')
+const router = useRouter()
+
+const auth = getAuth(app);
+
+
+useEffect(() => {
+    onAuthStateChanged(auth, user => {
+       if(!user){
+        router.push('/signin')
+       return
+       }else{
+        const {displayName} = user
+        setDisplayName(displayName)
+       }
+    });
+}, );
+
+
   return (
     <div>
         <div className={classes.header}>
             <p className={classes.name}>
-                Hi Samuel
+                Hi {displayName}
             </p>
             <h1><span>Breakfast</span> is ready</h1>
         </div>
